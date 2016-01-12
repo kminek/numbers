@@ -87,11 +87,21 @@ class PESEL extends Number implements ValueObjectInterface
     {
         list($year, $month, $day) = array_map('intval', str_split($digits, 2));
         switch (ceil($month / 20)) {
-            case 1: $year += 1900; break;
-            case 2: $year += 2000; break;
-            case 3: $year += 2100; break;
-            case 4: $year += 2200; break;
-            case 5: $year += 1800; break;
+            case 1:
+                $year += 1900;
+                break;
+            case 2:
+                $year += 2000;
+                break;
+            case 3:
+                $year += 2100;
+                break;
+            case 4:
+                $year += 2200;
+                break;
+            case 5:
+                $year += 1800;
+                break;
         }
         $month = $month % 20;
         $date = DateTime::createFromFormat('Y-n-j', sprintf('%s-%s-%s', $year, $month, $day));
@@ -112,8 +122,7 @@ class PESEL extends Number implements ValueObjectInterface
         $digits = str_split($digits);
         $weights = str_split(static::WEIGHTS);
         $sum = 0;
-        for ($i = 0; $i < 10; $i++)
-        {
+        for ($i = 0; $i < 10; $i++) {
             $sum += $digits[$i] * $weights[$i];
         }
         return $sum % 10;

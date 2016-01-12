@@ -82,7 +82,7 @@ class NIP extends Number implements ValueObjectInterface
         $weights = str_split(static::WEIGHTS);
         $digits = str_split($digits);
         $sum = 0;
-        for($i = 0; $i < count($weights); $i++){
+        for ($i = 0; $i < count($weights); $i++) {
             $sum += $weights[$i] * $digits[$i];
         }
         $int = $sum % 11;

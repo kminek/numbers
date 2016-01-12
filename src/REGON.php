@@ -70,7 +70,7 @@ class REGON extends Number implements ValueObjectInterface
         $weights = str_split(constant(static::class . '::WEIGHTS_' . strlen($digits)));
         $digits = str_split($digits);
         $sum = 0;
-        for($i = 0; $i < count($weights); $i++){
+        for ($i = 0; $i < count($weights); $i++) {
             $sum += $weights[$i] * $digits[$i];
         }
         $int = $sum % 11;
