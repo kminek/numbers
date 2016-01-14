@@ -6,9 +6,6 @@
             "email": "kontakt@kminek.pl"
         }
     ],
-    "require": {
-        "symfony/var-dumper": "*"
-    },
     "require-dev": {
         "phpunit/phpunit": "4.*"
     },
@@ -17,5 +14,7 @@
             "Kminek\\Numbers\\": "src",
             "Kminek\\Numbers\\Tests\\": "tests"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable" : true
 }
